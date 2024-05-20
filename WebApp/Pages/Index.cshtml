@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('/images/motorcycle.png'); /* Replace 'path/to/your/image.jpg' with the actual path or URL of your image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #f8f9fa; /* Fallback color if image fails to load */
+        }
+
+        .jumbotron {
+            background-color: #343a40;
+            color: #ffffff;
+            width: 50%;
+        }
+
+            .jumbotron a {
+                color: #ffffff;
+            }
+
+                .jumbotron a:hover {
+                    color: #cccccc;
+                }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Welcome to BikeInfo Manager</h1>
+            <p class="lead">Manage all your bike information effortlessly!</p>
+            <hr class="my-4">
+            <p>With our application, you can store and delete bike information with ease.</p>
+            <a class="btn btn-primary btn-lg" href="/User" role="button">Get Started</a>
+        </div>
+    </div>
+</body>
+</html>

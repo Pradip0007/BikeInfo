@@ -1,0 +1,38 @@
+﻿@page
+@model WebApp.Pages.User.IndexModel
+@{
+    ViewData["Title"] = "User List";
+}
+<a href="/User/Create" class="btn btn-primary">Create</a>
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Bike Id</th>
+            <th>Bike Name</th>
+            <th>Bike Price</th>
+            <th>Bike Model Year</th>
+            <th>brand_id</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listUsers)
+        {
+            <tr>
+                <td>@item.product_id</td>
+                <td>@item.product_name</td>
+                <td>@item.list_price</td>
+                <td>@item.model_year</td>
+                <td>@item.brand_id</td>
+                <td>
+                    <a href="/User/Edit?id=@item.product_id" class="btn btn-primary">Edit</a>
+                </td>
+                <td>
+                    <a href="/User/Delete?id=@item.product_id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

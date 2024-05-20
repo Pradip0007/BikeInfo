@@ -1,0 +1,26 @@
+﻿@page
+@model WebApp.Pages.User.DeleteModel
+@{
+    ViewData["Title"] = "Delete User";
+}
+<h2>Delete User</h2>
+@if (!string.IsNullOrEmpty(Model.errorMessage))
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+}
+
+<p>Are you sure you want to delete this user?</p>
+<form method="post">
+    <button type="submit" class="btn btn-danger" id="deleteButton">Yes, Delete</button>
+    <a href="/User/Index" class="btn btn-primary">No, Cancel</a>
+</form>
+
+<script>document.getElementById("deleteButton").addEventListener("click", function (event) {
+        var confirmDelete = confirm("Are you sure you want to delete this user?");
+        if (!confirmDelete) {
+            event.preventDefault(); // Cancel form submission
+        }
+    });</script>
