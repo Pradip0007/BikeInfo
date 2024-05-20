@@ -1,0 +1,57 @@
+﻿@page
+@model WebApp.Pages.User.EditModel
+@{
+    ViewData["Title"] = "Edit User";
+}
+<h2>Edit User</h2>
+@if (!string.IsNullOrEmpty(Model.errorMessage))
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(Model.succesMessage))
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>@Model.succesMessage</strong>
+        <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+}
+
+<form method="post">
+    <input type="hidden" asp-for="user.product_id" />
+    <!-- Other input fields -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Product Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="user.product_name" required />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">List Price</label>
+        <div class="col-sm-6">
+            <input type="number" class="form-control" asp-for="user.list_price" step="0.01" required />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Model Year</label>
+        <div class="col-sm-6">
+            <input type="number" class="form-control" asp-for="user.model_year" required />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Brand ID</label>
+        <div class="col-sm-6">
+            <input type="number" class="form-control" asp-for="user.brand_id" required />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="offset-sm-6 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+            <button type="button" class="btn btn-danger" onclick="window.location.href='/User/Index'">Cancel</button>
+        </div>
+    </div>
+</form>
+
